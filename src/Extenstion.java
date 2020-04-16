@@ -30,20 +30,20 @@ public class Extenstion implements Serializable {
         extent.add(this);
     }
 
-//    private void add(Extenstion ex) {
-//        extent.add(ex);
-//    }
-//
-//    private void remove(Extenstion ex) {
-//        extent.remove(ex);
-//    }
-
     public static void writeExtents(ObjectOutputStream stream) throws IOException {
         stream.writeObject(allExtents);
     }
 
     public static void readExtents(ObjectInputStream stream) throws IOException, ClassNotFoundException {
         allExtents = (Hashtable) stream.readObject();
+    }
+
+    public static <T> Iterable<T> getExtent(Class<T> type) throws ClassNotFoundException {
+        if(allExtents.containsKey(type)) {
+            return (Iterable<T>) allExtents.get(type);
+        }
+
+        throw new ClassNotFoundException(String.format("%s. Stored extents: %s", type.toString(), allExtents.keySet()));
     }
 
     public static void showExtent(Class theClass) throws Exception {
