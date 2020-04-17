@@ -7,7 +7,7 @@ import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
-public class Extenstion implements Serializable {
+public abstract class Extenstion implements Serializable {
     private static long serialVersionUID;
 
     //https://edux.pjwstk.edu.pl/mat/205/lec/Wyklad-MAS-nr-03.html
@@ -59,6 +59,7 @@ public class Extenstion implements Serializable {
         System.out.println("Extenstion of the class: " + Extenstion.class.getName());
         for (Object ex : extent) {
             System.out.println(ex);
+            System.out.println();
         }
     }
 }
