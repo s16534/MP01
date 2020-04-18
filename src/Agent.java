@@ -37,11 +37,15 @@ public class Agent extends Worker {
         this.grossSalary = grossSalary;
     }
 
-    public static double findTheHighestPaidAgent() throws ClassNotFoundException {
-        Iterable<Agent> agents = Extenstion.getExtent(Agent.class);
+    public static double findTheHighestSalary() throws ClassNotFoundException {
         double theBiggestSalary = 0.00;
-        for(Agent agent: agents) {
-            theBiggestSalary = theBiggestSalary > agent.getGrossSalary() ? theBiggestSalary : agent.getGrossSalary();
+        try {
+            Iterable<Agent> agents = Extenstion.getExtent(Agent.class);
+            for(Agent agent: agents) {
+                theBiggestSalary = theBiggestSalary > agent.getGrossSalary() ? theBiggestSalary : agent.getGrossSalary();
+            }
+        } catch(ClassNotFoundException e) {
+
         }
         return theBiggestSalary;
     }

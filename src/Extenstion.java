@@ -62,4 +62,9 @@ public abstract class Extenstion implements Serializable {
             System.out.println();
         }
     }
+
+    @Override
+    public String toString() {
+        return "Some value";
+    }
 }

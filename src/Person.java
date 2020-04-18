@@ -33,6 +33,10 @@ public class Person extends Extenstion {
         return lastName;
     }
 
+    public void sujdssada() {
+
+    }
+
     public String getEmail() {
         return email;
     }

@@ -21,6 +21,10 @@ public class Address extends Extenstion{
         addCountriesToList();
     }
 
+    public Address getAddress() {
+        return Address.this;
+    }
+
     @Override
     public String toString() {
         return    "\tStreet: " + getStreet() + " " + getBuildNo() + (getFlatNo().isEmpty() ? "" : " m." + getFlatNo())  +
@@ -67,13 +71,19 @@ public class Address extends Extenstion{
 
 
     public void setFlatNo() {
-        this.flatNo = "";
+        this.flatNo = null;
     }
-
     public void setFlatNo(String flatNo) {
         this.flatNo = flatNo;
     }
 
+    //Przeciążenie
+    public void setCountry() {
+        this.country = "Polska";
+    }
+    public void setCountry(String country) {
+        this.country = country;
+    }
 
     public void setBuildNo(String buildNo) {
         this.buildNo = buildNo;
@@ -91,7 +101,4 @@ public class Address extends Extenstion{
         this.street = street;
     }
 
-    public void setCountry(String country) {
-        this.country = country;
-    }
 }

@@ -17,8 +17,10 @@ public class Client extends Person {
     }
 
     //Getters
-    public Address getAddress() {
-        return address;
+    public String getAddress() {
+        return "Street " + this.address.getStreet() + " " + this.address.getBuildNo() + (this.address.getFlatNo().isEmpty() ? "" : this.address.getFlatNo() +
+                "\n" + this.address.getPostalCode() + " " + this.address.getCity() + ", " + this.address.getCountry()
+        );
     }
 
 
