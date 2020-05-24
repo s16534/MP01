@@ -1,5 +1,5 @@
 
-public class Person extends Extenstion {
+public class Person extends ObjectPlusPlus  {
     String firstName;
     String lastName;
     String email;
@@ -7,6 +7,7 @@ public class Person extends Extenstion {
     private static int minimalAge = 18; //Atrybut klasowy
 
     public Person(String firstName, String lastName, String email, int age) {
+        super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -18,10 +19,12 @@ public class Person extends Extenstion {
 
     @Override
     public String toString() {
-        return    "\tFirst name: " + firstName +
-                "\n\tLast name: " + lastName +
-                "\n\tEmail: " + email +
-                "\n\tAge: " + age;
+        return "Person{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                '}';
     }
 
     //Getters
@@ -32,11 +35,6 @@ public class Person extends Extenstion {
     public String getLastName() {
         return lastName;
     }
-
-    public void sujdssada() {
-
-    }
-
     public String getEmail() {
         return email;
     }
